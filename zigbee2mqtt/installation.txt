@@ -21,8 +21,15 @@ WICHTIG!!!!!!!!
    chown -R root:wheel /opt/zigbee2mqtt
    cd /opt/zigbee2mqtt
    npm install
- **zigbee2mqtt Konfiguration in /opt/zigbee2mqtt/data/configuration.yaml anpassen
+* pkg search node / pkg search npm  und die letzten Packete nehmen  
+
+5. zigbee2mqtt Konfiguration in /opt/zigbee2mqtt/data/configuration.yaml anpassen
+   für
+      CC2531 port: /dev/ttyUzigbee2531
+      CC2652rb port: /dev/ttyUzigbee2652
+   den Rest nach eingenem ermessen
+
+6. in der Jail ausführen:
+   cd /opt/zigbee2mqtt
    npm install pm2 -g
    pm2 start index.js
-
- * pkg search node / pkg search npm  und die letzten Packete nehmen
