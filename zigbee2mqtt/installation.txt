@@ -1,3 +1,9 @@
+WICHTIG!!!!!!!!
+Mit der Version 1.18.0 wurde auf zigbee-herdsman-0.13.72 updated was ein Update von serialport 9.0.6 zu serialport 9.0.7 beinhaltet. Dies ist NICHT mit dem SlaeshCC2652rb kompatibel (stand: 02.03.2021). Ich selber habe 1.17.0 installiert laut incident soll auch 1.17.1 gehen:
+https://github.com/Koenkk/zigbee2mqtt/issues/6517#
+WICHTIG!!!!!!!!
+
+
 1. Durchlesen und danach machen
 
 2. Basejail erstellen
