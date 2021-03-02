@@ -10,7 +10,8 @@ WICHTIG!!!!!!!!
 
 3. Einrichten des "usb-durchschleifen" : https://petermolnar.net/article/freenas-domoticz-zigbee-zwave-rflink/
    modifizierte Datein für z.B. CC2652rb von Slaesh https://slae.sh/projects/cc2652/ sind hier im Ordner
-   Jail Properties ->   exec_prestart -> /usr/bin/true /mnt/systempool/bin/prestart_zigbee2mqtt.sh
+   Jail Properties ->   devfs_ruleset -> 5
+                        exec_prestart -> /usr/bin/true /mnt/systempool/bin/prestart_zigbee2mqtt.sh
                         exec_poststart -> /mnt/systempool/bin/poststart_zigbee2mqtt.sh
 
 4. in der Jail ausführen:
