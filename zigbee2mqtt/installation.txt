@@ -1,0 +1,14 @@
+1. Durchlesen und danach machen
+2. Basejail erstellen
+3. in der Jail ausführen:
+   pkg
+   pkg update
+ * pkg install node14-14.15.5
+ * pkg install npm-node14-6.14.8
+   pkg install git gcc
+   git clone https://github.com/Koenkk/zigbee2mqtt.git /opt/zigbee2mqtt
+   chown -R root:wheel /opt/zigbee2mqtt
+   cd /opt/zigbee2mqtt
+   npm install
+
+ * pkg search node / pkg search npm  und die letzten Packete nehmen
