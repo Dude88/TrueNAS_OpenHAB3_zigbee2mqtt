@@ -1,6 +1,11 @@
 1. Durchlesen und danach machen
+
 2. Basejail erstellen
-3. in der Jail ausführen:
+
+3. Einrichten des "usb-durchschleifen" : https://petermolnar.net/article/freenas-domoticz-zigbee-zwave-rflink/
+   modifizierte Datein für z.B. CC2652rb von Slaesh https://slae.sh/projects/cc2652/ sind hier im Ordner
+
+4. in der Jail ausführen:
    pkg
    pkg update
  * pkg install node14-14.15.5
@@ -10,5 +15,7 @@
    chown -R root:wheel /opt/zigbee2mqtt
    cd /opt/zigbee2mqtt
    npm install
+   npm install pm2 -g
+   pm2 start index.js
 
  * pkg search node / pkg search npm  und die letzten Packete nehmen
