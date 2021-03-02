@@ -15,6 +15,7 @@
    chown -R root:wheel /opt/zigbee2mqtt
    cd /opt/zigbee2mqtt
    npm install
+ **zigbee2mqtt Konfiguration in /opt/zigbee2mqtt/data/configuration.yaml anpassen
    npm install pm2 -g
    pm2 start index.js
 
