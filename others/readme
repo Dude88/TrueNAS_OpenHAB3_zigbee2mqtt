@@ -1,1 +1,2 @@
 
+Aufgaben -> Init/Shutdown Scripts -> POSTINIT COMMAND /root/spindown_timer.sh -t 5400 -p 300 -i ada0 -i ada5
