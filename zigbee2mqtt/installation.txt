@@ -15,10 +15,12 @@ WICHTIG!!!!!!!!
    
    2. Datein reinkopieren prestart_zigbee2mqtt.sh / poststart_zigbee2mqtt.sh (z.B. /mnt/systempool/bin/poststart_zigbee2mqtt.sh)
    
-   3. Jail Properties ->   devfs_ruleset -> 5
-      exec_poststart -> /mnt/systempool/bin/poststart_zigbee2mqtt.sh
+   3. chmod +x/mnt/[Pool für Jails]/bin/prestart_zigbee2mqtt.sh | chmod +x/mnt/[Pool für Jails]/bin/poststart_zigbee2mqtt.sh
    
-   4. Tasks -> Init/Shutdown Script -> ADD [Type=Script, Script*=z.B. /mnt/systempool/bin/prestart_zigbee2mqtt.sh, When=Post Init]
+   4. Jail Properties ->   devfs_ruleset -> 5
+                           exec_poststart -> /mnt/systempool/bin/poststart_zigbee2mqtt.sh
+   
+   5. TrueNAS -> Tasks -> Init/Shutdown Script -> ADD [Type=Script, Script*=z.B. /mnt/systempool/bin/prestart_zigbee2mqtt.sh, When=Post Init]
 
 4. in der Jail ausführen:
    pkg
