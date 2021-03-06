@@ -1,0 +1,11 @@
+erster Entwurf!
+
+pkg
+pkg update
+pkg search openjdk11-11
+pkg install openjdk11-11[rest of]
+
+Manueller download https://www.openhab.org/download/
+ablegen in /opt/
+unzip /opt/[filedownload] -d /opt/openhab
+rm /opt/[filedownload]
