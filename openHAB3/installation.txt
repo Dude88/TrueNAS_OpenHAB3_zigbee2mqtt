@@ -1,11 +1,16 @@
-erster Entwurf!
+1.  Durchlesen und danach machen
 
-pkg
-pkg update
-pkg search openjdk11-11
-pkg install openjdk11-11[rest of]
+2.  in der Jail ausführen:
+    pkg
+    pkg update
+    pkg search openjdk11-11
+    pkg install openjdk11-11[rest of]
 
-Manueller download https://www.openhab.org/download/
-ablegen in /opt/
-unzip /opt/[filedownload] -d /opt/openhab
-rm /opt/[filedownload]
+3.  Manueller download https://www.openhab.org/download/
+    ablegen in /opt/
+    
+4.  in der Jail ausführen:
+    unzip /opt/[filedownload] -d /opt/openhab
+    rm /opt/[filedownload]
+
+5.  Jail Properties -> exec_poststart ->/usr/bin/true;iocage exec OH3 screen -dms OH3_screen ./opt/openhab/start.sh
