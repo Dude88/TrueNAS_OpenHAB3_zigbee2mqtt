@@ -1,3 +1,29 @@
 
 Aufgaben -> Init/Shutdown Scripts -> POSTINIT COMMAND /mnt/systempool/bin/spindown_timer.sh -t 5400 -p 300 -i ada0 -i ada1 -i ada6
 Aufgaben -> Init/Shutdown Scripts -> POSTINIT COMMAND /mnt/systempool/bin/shutdown_timer.sh -t 7200 -p 300 -i ada0 -i ada5 -i ada6 -v
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------
+
+There are a handful of reasons disks might be accessed and spun up by the system. The following changes let my disks stay spun down.
+
+S.M.A.R.T.
+By default S.M.A.R.T. checks drives every 30 seconds, waking them up.
+
+Services -> S.M.A.R.T. -> Configure
+
+Set "Power Mode" to "Standby". This will prevent checking disks that are in standby mode (spun down).
+
+System Dataset
+I've noticed that the Disk IO plots on the Reporting page show writes to the pool even though no clients are connected. This is writes to the System Dataset, I believe mostly collectd writing logs and metrics.
+
+By default the System Dataset is placed on the main pool. It can be placed elsewhere.
+
+Use System -> System Dataset to move this to a flash device. If you boot from an SSD, use freenas-boot. Else use another SSD.
+
+You can use a USB flash device, but like Richard says in the comments this dataset receives a lot of writes and will likely quickly wear out a USB stick. SATA SSD prices have plummeted to around $30 now, so it's hard to justify the extra downtime and hassle to literally save a handful of dollars. A USB stick I used failed in months and the NAS was not bootable at all.
+
+Jails and VMs / Docker
+Apart from the above, of course make sure any jails or VM storage you create live on a flash device. When creating your first jail the system will suggest you place jail storage on your non-system pool, so likely your disks. This can be changed via Jails -> Activated Pool.
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------
+
